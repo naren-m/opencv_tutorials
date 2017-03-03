@@ -3,7 +3,7 @@
 ***Starting opencv3 Docker to run the tutorials***
 
 * Create a directory and pull the opencv_tutorials to that directory.
-* Docker pull the opencv:py3 image
+* Docker pull the narenm/opencv:py3 image
 * Start the docker image
 
 
