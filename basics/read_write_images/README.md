@@ -74,13 +74,12 @@ Reason being
 > OpenCV represents RGB images as multi-dimensional NumPy arrays… ***but in reverse order!***
 > This means that images are actually represented in BGR order rather than RGB!
 
-
 Fix for this
-
 ```python
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 ```
 
+***Usage***
 ```python
 plt.axis("off")
 %time plt.imshow(image)
