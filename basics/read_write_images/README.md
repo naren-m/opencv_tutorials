@@ -23,8 +23,7 @@ Using the second argument(optional) for function, we can specify the following f
 ```python
 cv2.imread("image_name.jpg", cv2.IMREAD_GRAYSCALE)
 ```
-
-***
+***Usage***
 
 ```python
 import cv2
@@ -61,6 +60,7 @@ Use function cv2.imwrite to save the image.
 
 First argument is file name and second is the image that we want to save
 
+***Usage***
 ```python
 cv2.imwrite("newimage.png", image)
 ```
@@ -80,7 +80,6 @@ Fix for this
 ```python
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 ```
-
 
 ```python
 plt.axis("off")
@@ -115,7 +114,7 @@ def imshow(input_image):
     plt.axis("off")
     plt.imshow(cv_rgb)
 ```
-
+***Usage***
 ```python
 %time Ipy.imshow(image)
 ```
@@ -154,7 +153,7 @@ def imshow_large(input_image):
     CPU times: user 3.13 s, sys: 0 ns, total: 3.13 s
     Wall time: 3.13 s
 
-
+***Usage***
 ```python
 %time Ipy.imshow_large(image)
 ```
