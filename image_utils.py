@@ -1,6 +1,3 @@
-from PIL import Image
-import IPython.display
-from io import BytesIO
 import cv2
 
 
@@ -14,6 +11,10 @@ class Ipy:
         """
         API is to show bigger images in ipython notebook. Uses PIL, IPython.display and BytesIO
         """
+        from PIL import Image
+        import IPython.display
+        from io import BytesIO
+        
         rgb_img = cv2.cvtColor(input_image, cv2.COLOR_BGR2RGB)
         img = Image.fromarray(rgb_img)
 
