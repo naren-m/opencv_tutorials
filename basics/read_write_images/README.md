@@ -26,11 +26,6 @@ cv2.imread("image_name.jpg", cv2.IMREAD_GRAYSCALE)
 
 ***
 
-***Reference***
-* [OpenCV-python tutorials](http://docs.opencv.org/3.2.0/dc/d2e/tutorial_py_image_display.html)
-
-
-
 ```python
 import cv2
 import matplotlib.pyplot as plt
@@ -41,8 +36,6 @@ sys.path.append('/code/opencv_tutorials')
 from image_utils import Ipy
 
 %matplotlib inline
-
-print("OpenCV Version : %s " % cv2.__version__)
 ```
 
 
@@ -60,6 +53,7 @@ print("channels: %d" % (image.shape[2]))
     height: 2448 pixels
     channels: 3
 
+***
 
 ### Write an image
 
@@ -71,9 +65,12 @@ First argument is file name and second is the image that we want to save
 cv2.imwrite("newimage.png", image)
 ```
 
+***
+
+### Showing image using matplotlib
 Using matplotlib.pyplot directly will give unexpected results as below.
 
-Reason beeing 
+Reason being 
 > OpenCV represents RGB images as multi-dimensional NumPy arrays… ***but in reverse order!***
 > This means that images are actually represented in BGR order rather than RGB!
 
@@ -83,11 +80,6 @@ Fix for this
 ```python
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 ```
-
-***
-
-***Reference***
-* [How to Display a Matplotlib RGB Image](http://www.pyimagesearch.com/2014/11/03/display-matplotlib-rgb-image/)
 
 
 ```python
@@ -157,21 +149,20 @@ def imshow_large(input_image):
     IPython.display.display(IPython.display.Image(data=b.getvalue(), format='png', embed=True))
 ```
 
-***Caveat beeing this take longer time to show the image***
+***Caveat being this take longer time to show the image***
 
-CPU times: user 3.13 s, sys: 0 ns, total: 3.13 s
-
-Wall time: 3.13 s
+    CPU times: user 3.13 s, sys: 0 ns, total: 3.13 s
+    Wall time: 3.13 s
 
 
 ```python
 %time Ipy.imshow_large(image)
 ```
 
-
 ![png](img/output_10_0.png)
 
-
-    CPU times: user 3.13 s, sys: 0 ns, total: 3.13 s
-    Wall time: 3.13 s
-
+***
+***References***
+* [OpenCV-python tutorials](http://docs.opencv.org/3.2.0/dc/d2e/tutorial_py_image_display.html)
+* [How to Display a Matplotlib RGB Image](http://www.pyimagesearch.com/2014/11/03/display-matplotlib-rgb-image/)
+* [Using magics %time](https://ipython.org/ipython-doc/3/interactive/magics.html)
