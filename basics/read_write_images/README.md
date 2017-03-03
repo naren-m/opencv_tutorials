@@ -1,12 +1,9 @@
-
 ## Using OpenCV
 
 ### Goals
 * Learn how to read, save and show an image
 * Learn how to use cv.imread, cv.imwrite
 * Learn how to show figures in matplotlib in ipython notebook
-
-
 
 ### Read an image
 
@@ -29,7 +26,7 @@ cv2.imread("image_name.jpg", cv2.IMREAD_GRAYSCALE)
 
 ***
 
-*** Reference ***
+***Reference***
 * [OpenCV-python tutorials](http://docs.opencv.org/3.2.0/dc/d2e/tutorial_py_image_display.html)
 
 
@@ -74,28 +71,10 @@ First argument is file name and second is the image that we want to save
 cv2.imwrite("newimage.png", image)
 ```
 
-
-
-```python
-%time cv2.imwrite("newimage.png", image)
-```
-
-    CPU times: user 410 ms, sys: 80 ms, total: 490 ms
-    Wall time: 1.33 s
-
-
-
-
-
-    True
-
-
-
 Using matplotlib.pyplot directly will give unexpected results as below.
 
 Reason beeing 
 > OpenCV represents RGB images as multi-dimensional NumPy arrays… ***but in reverse order!***
-
 > This means that images are actually represented in BGR order rather than RGB!
 
 
@@ -107,7 +86,7 @@ plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
 ***
 
-*** Reference ***
+***Reference***
 * [How to Display a Matplotlib RGB Image](http://www.pyimagesearch.com/2014/11/03/display-matplotlib-rgb-image/)
 
 
@@ -115,25 +94,14 @@ plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 plt.axis("off")
 %time plt.imshow(image)
 ```
-
     CPU times: user 230 ms, sys: 30 ms, total: 260 ms
     Wall time: 261 ms
 
-
-
-
-
-    <matplotlib.image.AxesImage at 0x7fcaec116358>
-
-
-
-
 ![png](img/output_6_2.png)
-
 
 So I had a small helper function in image_utils module.
 
-*** Importing image_utils module ***
+***Importing image_utils module***
 
 ```python
 import sys
@@ -156,15 +124,12 @@ def imshow(input_image):
     plt.imshow(cv_rgb)
 ```
 
-
 ```python
 %time Ipy.imshow(image)
 ```
 
     CPU times: user 320 ms, sys: 10 ms, total: 330 ms
     Wall time: 328 ms
-
-
 
 ![png](img/output_8_1.png)
 
@@ -192,7 +157,7 @@ def imshow_large(input_image):
     IPython.display.display(IPython.display.Image(data=b.getvalue(), format='png', embed=True))
 ```
 
-*** Caveat beeing this take longer time to show the image ***
+***Caveat beeing this take longer time to show the image***
 
 CPU times: user 3.13 s, sys: 0 ns, total: 3.13 s
 
